@@ -77,12 +77,13 @@ function App() {
       const _provider = new ethers.providers.Web3Provider(ethereum);
       const _signer = _provider.getSigner();
 
-      const contractAddress = "0xdC66508c5e1C190be85D712604663B33C2EA3982";
-      const contractABI = abi;
+      const contractAddress = '0xdC66508c5e1C190be85D712604663B33C2EA3982';
+      const contractABI = abi.abi;
 
       // Log contract initialization steps
       console.log("Initializing contract with address:", contractAddress);
       const _contract = new ethers.Contract(contractAddress, contractABI, _signer);
+      
 
       // Check contract methods
       console.log("Available contract methods:", Object.keys(_contract.interface.functions));
